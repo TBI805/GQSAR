@@ -1,0 +1,84 @@
+# Overwritting configs
+metadata: sentence
+
+# Config the sentence embedding model
+#   Sentence T5
+sent_emb_model: sentence-t5-base
+sent_emb_dim: 768
+sent_emb_pca: 128
+
+# sent_emb_model: text-embedding-3-large
+# sent_emb_dim: 3072
+# sent_emb_pca: 512
+
+sent_emb_batch_size: 512
+
+# Config for the backbone model
+max_item_seq_len: 50
+n_embd: 448
+n_layer: 2
+n_head: 4
+n_inner: 1024
+activation_function: gelu_new
+resid_pdrop: 0.1
+embd_pdrop: 0.5
+attn_pdrop: 0.5
+layer_norm_epsilon: 1e-12
+initializer_range: 0.02
+
+# Semantic ID configs
+n_codebook: 16
+codebook_size: 256
+
+# GRQ configs
+grq_hidden_dim: 1024
+grq_e_dim: 256
+grq_n_groups: 4
+grq_beta: 0.5
+grq_lr: 1e-3
+grq_epochs: 300
+grq_batch_size: 1024
+
+# quantization_dropout_rate: Probability of using fewer RQ layers during training (0.0-1.0)
+quantization_dropout_rate: 0.5
+
+# GRQ Ablation Experiment Switches
+
+# use_codebook_restart: Enable dead code revival mechanism in VQ (True/False)
+use_codebook_restart: True
+
+# use_gradient_update: Use k-means initialization + gradient update instead of EMA (True/False)
+# When True: codebook is initialized with k-means, updated via gradient descent
+# When False (default): codebook is updated via EMA
+use_gradient_update: False
+
+# use_euclidean: Use Euclidean distance instead of cosine similarity for quantization (True/False)
+# When True: Use L2 distance for nearest-neighbor lookup
+# When False (default): Use cosine similarity for nearest-neighbor lookup
+use_euclidean: False
+
+# use_opq: Use OPQ (FAISS) instead of GRQ for quantization (True/False)
+use_opq: False
+
+# OPQ-specific configs (only used when use_opq is True)
+opq_use_gpu: False
+opq_gpu_id: 0
+faiss_omp_num_threads: 8
+
+temperature: 0.03
+
+chunk_size: 1024
+num_workers: 64
+
+# Prediction Mode Switch
+# prediction_group_size: Number of digits to predict in parallel per group.
+# e.g., With 16 total digits:
+#   - size=1:  16 groups (Fully Autoregressive)
+#   - size=2:  8 groups
+#   - size=4:  4 groups
+#   - size=8:  2 groups
+#   - size=16: 1 group (Fully Parallel)
+
+prediction_group_size: 8
+context_fusion_weight: 1.0
+
