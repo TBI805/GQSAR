@@ -12,7 +12,7 @@ from genrec.utils import parse_command_line_args
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default='RPG', help='Model name')
+    parser.add_argument('--model', type=str, default='GRQ', help='Model name')
     parser.add_argument('--dataset', type=str, default='AmazonReviews2014', help='Dataset name')
     parser.add_argument('--checkpoint', type=str, default=None, help='Checkpoint path')
     return parser.parse_known_args()
