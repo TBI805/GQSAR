@@ -50,4 +50,5 @@ CUDA_VISIBLE_DEVICES=0 python main.py --category=Toys_and_Games --model=GRQ --co
 You can also check the training log in[`📁 logs`](logs/).
 
 ## Acknowledgment
-Our code references [RPG](https://github.com/facebookresearch/RPG_KDD2025). We appreciate their outstanding work.
+Our code references [RPG](https://github.com/facebookresearch/RPG_KDD2025) and 
+[RQ-VAE](https://github.com/EdoardoBotta/RQ-VAE-Recommender). We appreciate their outstanding work.
