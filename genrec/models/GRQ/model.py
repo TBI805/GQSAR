@@ -200,7 +200,7 @@ class GRQ(AbstractModel):
 
     def generate(self, batch, n_return_sequences=1):
         """Generate top-k item predictions."""
-        outputs = self.forward_parallel(batch, return_loss=False)
+        outputs = self.forward(batch, return_loss=False)
         states = outputs.final_states.gather(
             dim=1,
             index=(batch['seq_lens'] - 1).view(-1, 1, 1, 1).expand(-1, 1, self.n_pred_head, self.config['n_embd'])
