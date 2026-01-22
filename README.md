@@ -31,19 +31,19 @@ Note that:
 ### Sports and Outdoors
 
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --category=Sports_and_Outdoors --model=GRQ --context_fusion_weight=7.0
+CUDA_VISIBLE_DEVICES=0 python main.py --category=Sports_and_Outdoors --model=GRQ --context_fusion_weight=6.0
 ```
 
 ### Beauty
 
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --category=Beauty --model=GRQ --context_fusion_weight=4.0 --use_gradient_update=True
+CUDA_VISIBLE_DEVICES=0 python main.py --category=Beauty --model=GRQ --context_fusion_weight=4.0
 ```
 
 ### Toys and Games
 
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --category=Toys_and_Games --model=GRQ --context_fusion_weight=4.0
+CUDA_VISIBLE_DEVICES=0 python main.py --category=Toys_and_Games --model=GRQ --context_fusion_weight=2.0
 ```
 
 ## Acknowledgment
