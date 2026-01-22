@@ -45,7 +45,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py --category=Beauty --model=GRQ --context_fu
 ```
 CUDA_VISIBLE_DEVICES=0 python main.py --category=Toys_and_Games --model=GRQ --context_fusion_weight=2.0
 ```
-### 5. Results
+### Results of Overall Performance
 You can also check the training logs in[`📁 logs`](logs/).
 
 ## Acknowledgment
