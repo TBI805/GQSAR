@@ -1,0 +1,546 @@
+Thu 22 Jan 2026 02:12:31 INFO  Device: cuda
+Thu 22 Jan 2026 02:12:31 INFO  [DATASET] Amazon Reviews 2014 for category: Beauty
+Thu 22 Jan 2026 02:12:31 INFO  [DATASET] Reviews have been processed...
+Thu 22 Jan 2026 02:12:31 INFO  [DATASET] Metadata has been processed...
+Thu 22 Jan 2026 02:12:31 INFO  [Dataset] AmazonReviews2014
+	Number of users: 22364
+	Number of items: 12102
+	Number of interactions: 198502
+	Average item sequence length: 8.875961366481846
+Thu 22 Jan 2026 02:12:33 INFO  [TOKENIZER] Force regenerating GRQ quantization...
+Thu 22 Jan 2026 02:12:33 INFO  [TOKENIZER] Applying PCA...
+Thu 22 Jan 2026 02:12:34 INFO  [TOKENIZER] Sentence embeddings shape: (12101, 128)
+Thu 22 Jan 2026 02:12:34 INFO  [TOKENIZER] Items for training: 12068 of 12101
+Thu 22 Jan 2026 02:12:34 INFO  [TOKENIZER] Using GRQ quantization...
+Thu 22 Jan 2026 02:12:35 INFO  [TOKENIZER] Training GRQ...
+Thu 22 Jan 2026 02:12:59 INFO  Epoch 50/300, Loss: 2.3615, Time: 0.3814s
+Thu 22 Jan 2026 02:13:19 INFO  Epoch 100/300, Loss: 1.4074, Time: 0.3864s
+Thu 22 Jan 2026 02:13:43 INFO  Epoch 150/300, Loss: 1.1681, Time: 0.4965s
+Thu 22 Jan 2026 02:14:00 INFO  Epoch 200/300, Loss: 1.0024, Time: 0.3798s
+Thu 22 Jan 2026 02:14:22 INFO  Epoch 250/300, Loss: 0.7773, Time: 0.4615s
+Thu 22 Jan 2026 02:14:43 INFO  Epoch 300/300, Loss: 0.5567, Time: 0.2688s
+Thu 22 Jan 2026 02:14:43 INFO  [TOKENIZER] Generating codes...
+Thu 22 Jan 2026 02:14:43 INFO  [TOKENIZER] Average Training Time per Epoch: 0.4286s
+Thu 22 Jan 2026 02:14:43 INFO  [TOKENIZER] GPU Memory (Max): 0.6989 GB
+Thu 22 Jan 2026 02:15:01 INFO  GRQ(
+  (gpt2): GPT2Model(
+    (wte): Embedding(4098, 448)
+    (wpe): Embedding(50, 448)
+    (drop): Dropout(p=0.5, inplace=False)
+    (h): ModuleList(
+      (0-1): 2 x GPT2Block(
+        (ln_1): LayerNorm((448,), eps=1e-12, elementwise_affine=True)
+        (attn): GPT2Attention(
+          (c_attn): Conv1D(nf=1344, nx=448)
+          (c_proj): Conv1D(nf=448, nx=448)
+          (attn_dropout): Dropout(p=0.5, inplace=False)
+          (resid_dropout): Dropout(p=0.1, inplace=False)
+        )
+        (ln_2): LayerNorm((448,), eps=1e-12, elementwise_affine=True)
+        (mlp): GPT2MLP(
+          (c_fc): Conv1D(nf=1024, nx=448)
+          (c_proj): Conv1D(nf=448, nx=1024)
+          (act): NewGELUActivation()
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (ln_f): LayerNorm((448,), eps=1e-12, elementwise_affine=True)
+  )
+  (pred_heads): Sequential(
+    (0): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (1): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (2): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (3): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (4): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (5): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (6): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (7): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (8): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (9): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (10): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (11): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (12): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (13): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (14): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+    (15): ResBlock(
+      (linear): Linear(in_features=448, out_features=448, bias=True)
+      (act): SiLU()
+    )
+  )
+  (loss_fct): CrossEntropyLoss()
+)
+Thu 22 Jan 2026 02:15:01 INFO  #Embedding parameters: 1835904
+#Non-embedding parameters: 6692480
+#Total trainable parameters: 8528384
+
+Thu 22 Jan 2026 02:15:25 INFO  [Epoch 1] Train Loss: 6.277399327495311
+Thu 22 Jan 2026 02:15:25 INFO  [Epoch 1] Training Time: 24.1547s
+Thu 22 Jan 2026 02:15:34 INFO  [Epoch 1] Eval Time: 8.2623s
+Thu 22 Jan 2026 02:15:34 INFO  [Epoch 1] Val Results: OrderedDict([('ndcg@5', 0.0010953206801787019), ('ndcg@10', 0.0015468953642994165), ('recall@5', 0.0018781021935865283), ('recall@10', 0.0032643205486238003), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:15:34 INFO  [Epoch 1] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:16:01 INFO  [Epoch 2] Train Loss: 5.503866889689228
+Thu 22 Jan 2026 02:16:01 INFO  [Epoch 2] Training Time: 27.2391s
+Thu 22 Jan 2026 02:16:10 INFO  [Epoch 2] Eval Time: 9.5878s
+Thu 22 Jan 2026 02:16:10 INFO  [Epoch 2] Val Results: OrderedDict([('ndcg@5', 0.00373895769007504), ('ndcg@10', 0.004110874608159065), ('recall@5', 0.005187139380723238), ('recall@10', 0.006349774077534676), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:16:11 INFO  [Epoch 2] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:16:34 INFO  [Epoch 3] Train Loss: 5.485534181689272
+Thu 22 Jan 2026 02:16:34 INFO  [Epoch 3] Training Time: 23.1633s
+Thu 22 Jan 2026 02:16:45 INFO  [Epoch 3] Eval Time: 11.2447s
+Thu 22 Jan 2026 02:16:45 INFO  [Epoch 3] Val Results: OrderedDict([('ndcg@5', 0.0036843465641140938), ('ndcg@10', 0.004805704578757286), ('recall@5', 0.0057684569619596004), ('recall@10', 0.009211644530296326), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:16:45 INFO  [Epoch 3] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:17:09 INFO  [Epoch 4] Train Loss: 5.4554352335410545
+Thu 22 Jan 2026 02:17:09 INFO  [Epoch 4] Training Time: 23.9247s
+Thu 22 Jan 2026 02:17:18 INFO  [Epoch 4] Eval Time: 9.0850s
+Thu 22 Jan 2026 02:17:18 INFO  [Epoch 4] Val Results: OrderedDict([('ndcg@5', 0.003328267950564623), ('ndcg@10', 0.0045989020727574825), ('recall@5', 0.0054107229225337505), ('recall@10', 0.009435228072106838), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:17:44 INFO  [Epoch 5] Train Loss: 5.389656194365851
+Thu 22 Jan 2026 02:17:44 INFO  [Epoch 5] Training Time: 25.7637s
+Thu 22 Jan 2026 02:17:56 INFO  [Epoch 5] Eval Time: 12.2828s
+Thu 22 Jan 2026 02:17:56 INFO  [Epoch 5] Val Results: OrderedDict([('ndcg@5', 0.006594284437596798), ('ndcg@10', 0.00920051522552967), ('recall@5', 0.010732012800872326), ('recall@10', 0.018870456144213676), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:17:56 INFO  [Epoch 5] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:18:16 INFO  [Epoch 6] Train Loss: 5.324200800149748
+Thu 22 Jan 2026 02:18:16 INFO  [Epoch 6] Training Time: 20.1150s
+Thu 22 Jan 2026 02:18:29 INFO  [Epoch 6] Eval Time: 12.9136s
+Thu 22 Jan 2026 02:18:29 INFO  [Epoch 6] Val Results: OrderedDict([('ndcg@5', 0.01062812190502882), ('ndcg@10', 0.013979857787489891), ('recall@5', 0.01645575277507305), ('recall@10', 0.026919465512037277), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:18:29 INFO  [Epoch 6] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:18:50 INFO  [Epoch 7] Train Loss: 5.270786176813711
+Thu 22 Jan 2026 02:18:50 INFO  [Epoch 7] Training Time: 20.6244s
+Thu 22 Jan 2026 02:18:55 INFO  [Epoch 7] Eval Time: 4.8772s
+Thu 22 Jan 2026 02:18:55 INFO  [Epoch 7] Val Results: OrderedDict([('ndcg@5', 0.01299226377159357), ('ndcg@10', 0.017219603061676025), ('recall@5', 0.021016858518123627), ('recall@10', 0.03416357561945915), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:18:55 INFO  [Epoch 7] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:19:18 INFO  [Epoch 8] Train Loss: 5.225036474737791
+Thu 22 Jan 2026 02:19:18 INFO  [Epoch 8] Training Time: 22.9696s
+Thu 22 Jan 2026 02:19:29 INFO  [Epoch 8] Eval Time: 11.4114s
+Thu 22 Jan 2026 02:19:29 INFO  [Epoch 8] Val Results: OrderedDict([('ndcg@5', 0.015183527022600174), ('ndcg@10', 0.019371140748262405), ('recall@5', 0.024773063138127327), ('recall@10', 0.03783034533262253), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:19:29 INFO  [Epoch 8] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:19:49 INFO  [Epoch 9] Train Loss: 5.179266311154507
+Thu 22 Jan 2026 02:19:49 INFO  [Epoch 9] Training Time: 19.5704s
+Thu 22 Jan 2026 02:20:01 INFO  [Epoch 9] Eval Time: 11.8902s
+Thu 22 Jan 2026 02:20:01 INFO  [Epoch 9] Val Results: OrderedDict([('ndcg@5', 0.016231635585427284), ('ndcg@10', 0.02171441912651062), ('recall@5', 0.02580154687166214), ('recall@10', 0.042704466730356216), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:20:01 INFO  [Epoch 9] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:20:25 INFO  [Epoch 10] Train Loss: 5.138227429720435
+Thu 22 Jan 2026 02:20:25 INFO  [Epoch 10] Training Time: 24.0005s
+Thu 22 Jan 2026 02:20:32 INFO  [Epoch 10] Eval Time: 7.8644s
+Thu 22 Jan 2026 02:20:32 INFO  [Epoch 10] Val Results: OrderedDict([('ndcg@5', 0.019190380349755287), ('ndcg@10', 0.02546846680343151), ('recall@5', 0.029781335964798927), ('recall@10', 0.04941197484731674), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:20:33 INFO  [Epoch 10] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:20:57 INFO  [Epoch 11] Train Loss: 5.1020341344399025
+Thu 22 Jan 2026 02:20:57 INFO  [Epoch 11] Training Time: 24.9140s
+Thu 22 Jan 2026 02:21:08 INFO  [Epoch 11] Eval Time: 10.6096s
+Thu 22 Jan 2026 02:21:08 INFO  [Epoch 11] Val Results: OrderedDict([('ndcg@5', 0.021544747054576874), ('ndcg@10', 0.027446767315268517), ('recall@5', 0.03344810754060745), ('recall@10', 0.05178195983171463), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:21:08 INFO  [Epoch 11] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:21:21 INFO  [Epoch 12] Train Loss: 5.072634871643369
+Thu 22 Jan 2026 02:21:21 INFO  [Epoch 12] Training Time: 12.6178s
+Thu 22 Jan 2026 02:21:33 INFO  [Epoch 12] Eval Time: 12.2673s
+Thu 22 Jan 2026 02:21:33 INFO  [Epoch 12] Val Results: OrderedDict([('ndcg@5', 0.024199441075325012), ('ndcg@10', 0.030993212014436722), ('recall@5', 0.037383176386356354), ('recall@10', 0.058310601860284805), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:21:33 INFO  [Epoch 12] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:21:57 INFO  [Epoch 13] Train Loss: 5.0444978487373575
+Thu 22 Jan 2026 02:21:57 INFO  [Epoch 13] Training Time: 24.4829s
+Thu 22 Jan 2026 02:22:08 INFO  [Epoch 13] Eval Time: 10.1508s
+Thu 22 Jan 2026 02:22:08 INFO  [Epoch 13] Val Results: OrderedDict([('ndcg@5', 0.027265328913927078), ('ndcg@10', 0.0344720296561718), ('recall@5', 0.04243616759777069), ('recall@10', 0.06488396227359772), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:22:08 INFO  [Epoch 13] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:22:32 INFO  [Epoch 14] Train Loss: 5.019021860443719
+Thu 22 Jan 2026 02:22:32 INFO  [Epoch 14] Training Time: 24.2414s
+Thu 22 Jan 2026 02:22:45 INFO  [Epoch 14] Eval Time: 12.8813s
+Thu 22 Jan 2026 02:22:45 INFO  [Epoch 14] Val Results: OrderedDict([('ndcg@5', 0.029927248135209084), ('ndcg@10', 0.037434421479701996), ('recall@5', 0.045566339045763016), ('recall@10', 0.06886374950408936), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:22:45 INFO  [Epoch 14] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:23:05 INFO  [Epoch 15] Train Loss: 4.996855013441332
+Thu 22 Jan 2026 02:23:05 INFO  [Epoch 15] Training Time: 19.7768s
+Thu 22 Jan 2026 02:23:17 INFO  [Epoch 15] Eval Time: 11.8978s
+Thu 22 Jan 2026 02:23:17 INFO  [Epoch 15] Val Results: OrderedDict([('ndcg@5', 0.0319814570248127), ('ndcg@10', 0.04020538181066513), ('recall@5', 0.04905424267053604), ('recall@10', 0.07472164183855057), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:23:17 INFO  [Epoch 15] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:23:43 INFO  [Epoch 16] Train Loss: 4.978066779599331
+Thu 22 Jan 2026 02:23:43 INFO  [Epoch 16] Training Time: 26.2956s
+Thu 22 Jan 2026 02:23:50 INFO  [Epoch 16] Eval Time: 7.0976s
+Thu 22 Jan 2026 02:23:50 INFO  [Epoch 16] Val Results: OrderedDict([('ndcg@5', 0.033666495233774185), ('ndcg@10', 0.041773129254579544), ('recall@5', 0.05066404491662979), ('recall@10', 0.07588427513837814), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:23:50 INFO  [Epoch 16] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:24:17 INFO  [Epoch 17] Train Loss: 4.957951097205134
+Thu 22 Jan 2026 02:24:17 INFO  [Epoch 17] Training Time: 26.5781s
+Thu 22 Jan 2026 02:24:28 INFO  [Epoch 17] Eval Time: 11.1053s
+Thu 22 Jan 2026 02:24:28 INFO  [Epoch 17] Val Results: OrderedDict([('ndcg@5', 0.03666400909423828), ('ndcg@10', 0.04484012722969055), ('recall@5', 0.054554399102926254), ('recall@10', 0.0799982100725174), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:24:28 INFO  [Epoch 17] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:24:49 INFO  [Epoch 18] Train Loss: 4.940593167106704
+Thu 22 Jan 2026 02:24:49 INFO  [Epoch 18] Training Time: 20.9397s
+Thu 22 Jan 2026 02:25:01 INFO  [Epoch 18] Eval Time: 12.7233s
+Thu 22 Jan 2026 02:25:01 INFO  [Epoch 18] Val Results: OrderedDict([('ndcg@5', 0.03652734309434891), ('ndcg@10', 0.04480190947651863), ('recall@5', 0.05397307872772217), ('recall@10', 0.07972991466522217), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:25:25 INFO  [Epoch 19] Train Loss: 4.92473041893232
+Thu 22 Jan 2026 02:25:25 INFO  [Epoch 19] Training Time: 24.1100s
+Thu 22 Jan 2026 02:25:36 INFO  [Epoch 19] Eval Time: 10.0997s
+Thu 22 Jan 2026 02:25:36 INFO  [Epoch 19] Val Results: OrderedDict([('ndcg@5', 0.038005683571100235), ('ndcg@10', 0.04698308929800987), ('recall@5', 0.057237401604652405), ('recall@10', 0.08523006737232208), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:25:36 INFO  [Epoch 19] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:26:00 INFO  [Epoch 20] Train Loss: 4.909022671161312
+Thu 22 Jan 2026 02:26:00 INFO  [Epoch 20] Training Time: 24.6711s
+Thu 22 Jan 2026 02:26:13 INFO  [Epoch 20] Eval Time: 12.9351s
+Thu 22 Jan 2026 02:26:13 INFO  [Epoch 20] Val Results: OrderedDict([('ndcg@5', 0.03907681629061699), ('ndcg@10', 0.04756136238574982), ('recall@5', 0.05799758434295654), ('recall@10', 0.08446988463401794), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:26:13 INFO  [Epoch 20] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:26:32 INFO  [Epoch 21] Train Loss: 4.893619900882834
+Thu 22 Jan 2026 02:26:32 INFO  [Epoch 21] Training Time: 19.1388s
+Thu 22 Jan 2026 02:26:45 INFO  [Epoch 21] Eval Time: 12.3656s
+Thu 22 Jan 2026 02:26:45 INFO  [Epoch 21] Val Results: OrderedDict([('ndcg@5', 0.04057002812623978), ('ndcg@10', 0.04988113418221474), ('recall@5', 0.05880248546600342), ('recall@10', 0.08782363682985306), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:26:45 INFO  [Epoch 21] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:27:11 INFO  [Epoch 22] Train Loss: 4.877067905841487
+Thu 22 Jan 2026 02:27:11 INFO  [Epoch 22] Training Time: 25.7096s
+Thu 22 Jan 2026 02:27:18 INFO  [Epoch 22] Eval Time: 7.5646s
+Thu 22 Jan 2026 02:27:18 INFO  [Epoch 22] Val Results: OrderedDict([('ndcg@5', 0.04142693430185318), ('ndcg@10', 0.050418782979249954), ('recall@5', 0.06077002361416817), ('recall@10', 0.08880740404129028), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:27:18 INFO  [Epoch 22] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:27:45 INFO  [Epoch 23] Train Loss: 4.865812481039821
+Thu 22 Jan 2026 02:27:45 INFO  [Epoch 23] Training Time: 26.5798s
+Thu 22 Jan 2026 02:27:55 INFO  [Epoch 23] Eval Time: 10.6162s
+Thu 22 Jan 2026 02:27:55 INFO  [Epoch 23] Val Results: OrderedDict([('ndcg@5', 0.04220004379749298), ('ndcg@10', 0.052100908011198044), ('recall@5', 0.06041228771209717), ('recall@10', 0.0910879597067833), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:27:55 INFO  [Epoch 23] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:28:17 INFO  [Epoch 24] Train Loss: 4.85009487076561
+Thu 22 Jan 2026 02:28:17 INFO  [Epoch 24] Training Time: 21.3119s
+Thu 22 Jan 2026 02:28:28 INFO  [Epoch 24] Eval Time: 11.6586s
+Thu 22 Jan 2026 02:28:28 INFO  [Epoch 24] Val Results: OrderedDict([('ndcg@5', 0.04199044406414032), ('ndcg@10', 0.051618658006191254), ('recall@5', 0.060993604362010956), ('recall@10', 0.09095380455255508), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:28:53 INFO  [Epoch 25] Train Loss: 4.838646997319589
+Thu 22 Jan 2026 02:28:53 INFO  [Epoch 25] Training Time: 24.8229s
+Thu 22 Jan 2026 02:29:03 INFO  [Epoch 25] Eval Time: 9.5861s
+Thu 22 Jan 2026 02:29:03 INFO  [Epoch 25] Val Results: OrderedDict([('ndcg@5', 0.04312541335821152), ('ndcg@10', 0.053337033838033676), ('recall@5', 0.06376603990793228), ('recall@10', 0.09547019749879837), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:29:03 INFO  [Epoch 25] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:29:27 INFO  [Epoch 26] Train Loss: 4.827380869648244
+Thu 22 Jan 2026 02:29:27 INFO  [Epoch 26] Training Time: 24.4242s
+Thu 22 Jan 2026 02:29:40 INFO  [Epoch 26] Eval Time: 13.1406s
+Thu 22 Jan 2026 02:29:40 INFO  [Epoch 26] Val Results: OrderedDict([('ndcg@5', 0.04347000643610954), ('ndcg@10', 0.05326783284544945), ('recall@5', 0.06394490599632263), ('recall@10', 0.09439699351787567), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:30:00 INFO  [Epoch 27] Train Loss: 4.811337928960819
+Thu 22 Jan 2026 02:30:00 INFO  [Epoch 27] Training Time: 19.2297s
+Thu 22 Jan 2026 02:30:13 INFO  [Epoch 27] Eval Time: 13.0167s
+Thu 22 Jan 2026 02:30:13 INFO  [Epoch 27] Val Results: OrderedDict([('ndcg@5', 0.045526932924985886), ('ndcg@10', 0.05467796325683594), ('recall@5', 0.06667263060808182), ('recall@10', 0.09506774693727493), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:30:13 INFO  [Epoch 27] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:30:38 INFO  [Epoch 28] Train Loss: 4.7986331410927345
+Thu 22 Jan 2026 02:30:38 INFO  [Epoch 28] Training Time: 25.0906s
+Thu 22 Jan 2026 02:30:46 INFO  [Epoch 28] Eval Time: 8.2019s
+Thu 22 Jan 2026 02:30:46 INFO  [Epoch 28] Val Results: OrderedDict([('ndcg@5', 0.04595278948545456), ('ndcg@10', 0.056210096925497055), ('recall@5', 0.06720922887325287), ('recall@10', 0.09891338646411896), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:30:46 INFO  [Epoch 28] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:31:12 INFO  [Epoch 29] Train Loss: 4.785009185866554
+Thu 22 Jan 2026 02:31:12 INFO  [Epoch 29] Training Time: 25.8838s
+Thu 22 Jan 2026 02:31:22 INFO  [Epoch 29] Eval Time: 10.6170s
+Thu 22 Jan 2026 02:31:22 INFO  [Epoch 29] Val Results: OrderedDict([('ndcg@5', 0.04724134877324104), ('ndcg@10', 0.057281527668237686), ('recall@5', 0.06895317882299423), ('recall@10', 0.10029960423707962), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:31:22 INFO  [Epoch 29] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:31:45 INFO  [Epoch 30] Train Loss: 4.770601395333167
+Thu 22 Jan 2026 02:31:45 INFO  [Epoch 30] Training Time: 22.0220s
+Thu 22 Jan 2026 02:31:56 INFO  [Epoch 30] Eval Time: 11.2506s
+Thu 22 Jan 2026 02:31:56 INFO  [Epoch 30] Val Results: OrderedDict([('ndcg@5', 0.04686484858393669), ('ndcg@10', 0.057118356227874756), ('recall@5', 0.06837186217308044), ('recall@10', 0.10021016746759415), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:32:21 INFO  [Epoch 31] Train Loss: 4.757640361785889
+Thu 22 Jan 2026 02:32:21 INFO  [Epoch 31] Training Time: 25.3888s
+Thu 22 Jan 2026 02:32:30 INFO  [Epoch 31] Eval Time: 8.9806s
+Thu 22 Jan 2026 02:32:30 INFO  [Epoch 31] Val Results: OrderedDict([('ndcg@5', 0.04734472930431366), ('ndcg@10', 0.058590054512023926), ('recall@5', 0.06770111620426178), ('recall@10', 0.10240128636360168), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:32:30 INFO  [Epoch 31] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:32:55 INFO  [Epoch 32] Train Loss: 4.745515903623978
+Thu 22 Jan 2026 02:32:55 INFO  [Epoch 32] Training Time: 24.5213s
+Thu 22 Jan 2026 02:33:08 INFO  [Epoch 32] Eval Time: 13.1253s
+Thu 22 Jan 2026 02:33:08 INFO  [Epoch 32] Val Results: OrderedDict([('ndcg@5', 0.048123013228178024), ('ndcg@10', 0.05836474522948265), ('recall@5', 0.06980279833078384), ('recall@10', 0.10164110362529755), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:33:27 INFO  [Epoch 33] Train Loss: 4.7302031941933205
+Thu 22 Jan 2026 02:33:27 INFO  [Epoch 33] Training Time: 19.1613s
+Thu 22 Jan 2026 02:33:40 INFO  [Epoch 33] Eval Time: 12.8399s
+Thu 22 Jan 2026 02:33:40 INFO  [Epoch 33] Val Results: OrderedDict([('ndcg@5', 0.04903678596019745), ('ndcg@10', 0.05937022343277931), ('recall@5', 0.07172562181949615), ('recall@10', 0.10387694090604782), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:33:40 INFO  [Epoch 33] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:34:05 INFO  [Epoch 34] Train Loss: 4.718704488017772
+Thu 22 Jan 2026 02:34:05 INFO  [Epoch 34] Training Time: 24.9079s
+Thu 22 Jan 2026 02:34:14 INFO  [Epoch 34] Eval Time: 9.0125s
+Thu 22 Jan 2026 02:34:14 INFO  [Epoch 34] Val Results: OrderedDict([('ndcg@5', 0.049637895077466965), ('ndcg@10', 0.05981351435184479), ('recall@5', 0.07185976952314377), ('recall@10', 0.10347449034452438), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:34:14 INFO  [Epoch 34] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:34:39 INFO  [Epoch 35] Train Loss: 4.706199886775253
+Thu 22 Jan 2026 02:34:39 INFO  [Epoch 35] Training Time: 24.8516s
+Thu 22 Jan 2026 02:34:50 INFO  [Epoch 35] Eval Time: 11.2331s
+Thu 22 Jan 2026 02:34:50 INFO  [Epoch 35] Val Results: OrderedDict([('ndcg@5', 0.04967224970459938), ('ndcg@10', 0.06015681102871895), ('recall@5', 0.07194919884204865), ('recall@10', 0.10454768687486649), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:34:50 INFO  [Epoch 35] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:35:12 INFO  [Epoch 36] Train Loss: 4.688340286217113
+Thu 22 Jan 2026 02:35:12 INFO  [Epoch 36] Training Time: 22.2408s
+Thu 22 Jan 2026 02:35:23 INFO  [Epoch 36] Eval Time: 10.5106s
+Thu 22 Jan 2026 02:35:23 INFO  [Epoch 36] Val Results: OrderedDict([('ndcg@5', 0.05097298324108124), ('ndcg@10', 0.06116364523768425), ('recall@5', 0.07338013499975204), ('recall@10', 0.10499485582113266), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:35:23 INFO  [Epoch 36] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:35:49 INFO  [Epoch 37] Train Loss: 4.674826551191877
+Thu 22 Jan 2026 02:35:49 INFO  [Epoch 37] Training Time: 26.2674s
+Thu 22 Jan 2026 02:35:57 INFO  [Epoch 37] Eval Time: 8.1517s
+Thu 22 Jan 2026 02:35:57 INFO  [Epoch 37] Val Results: OrderedDict([('ndcg@5', 0.05071268975734711), ('ndcg@10', 0.06125664338469505), ('recall@5', 0.07279881834983826), ('recall@10', 0.10553146153688431), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:35:57 INFO  [Epoch 37] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:36:22 INFO  [Epoch 38] Train Loss: 4.663665214387497
+Thu 22 Jan 2026 02:36:22 INFO  [Epoch 38] Training Time: 24.8421s
+Thu 22 Jan 2026 02:36:35 INFO  [Epoch 38] Eval Time: 12.6626s
+Thu 22 Jan 2026 02:36:35 INFO  [Epoch 38] Val Results: OrderedDict([('ndcg@5', 0.050894517451524734), ('ndcg@10', 0.06118360906839371), ('recall@5', 0.07364843785762787), ('recall@10', 0.10548674315214157), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:36:54 INFO  [Epoch 39] Train Loss: 4.6491836037966285
+Thu 22 Jan 2026 02:36:54 INFO  [Epoch 39] Training Time: 19.3920s
+Thu 22 Jan 2026 02:37:07 INFO  [Epoch 39] Eval Time: 13.3667s
+Thu 22 Jan 2026 02:37:07 INFO  [Epoch 39] Val Results: OrderedDict([('ndcg@5', 0.05161402374505997), ('ndcg@10', 0.061937786638736725), ('recall@5', 0.07396145164966583), ('recall@10', 0.10602334141731262), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:37:07 INFO  [Epoch 39] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:37:32 INFO  [Epoch 40] Train Loss: 4.632895922896886
+Thu 22 Jan 2026 02:37:32 INFO  [Epoch 40] Training Time: 24.9302s
+Thu 22 Jan 2026 02:37:42 INFO  [Epoch 40] Eval Time: 9.4365s
+Thu 22 Jan 2026 02:37:42 INFO  [Epoch 40] Val Results: OrderedDict([('ndcg@5', 0.05233530327677727), ('ndcg@10', 0.06235366687178612), ('recall@5', 0.0754818245768547), ('recall@10', 0.10651522874832153), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:37:42 INFO  [Epoch 40] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:38:07 INFO  [Epoch 41] Train Loss: 4.619698307301738
+Thu 22 Jan 2026 02:38:07 INFO  [Epoch 41] Training Time: 24.6040s
+Thu 22 Jan 2026 02:38:18 INFO  [Epoch 41] Eval Time: 11.5347s
+Thu 22 Jan 2026 02:38:18 INFO  [Epoch 41] Val Results: OrderedDict([('ndcg@5', 0.05135108157992363), ('ndcg@10', 0.06168999895453453), ('recall@5', 0.07270938903093338), ('recall@10', 0.10486070811748505), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:38:40 INFO  [Epoch 42] Train Loss: 4.603831168448571
+Thu 22 Jan 2026 02:38:40 INFO  [Epoch 42] Training Time: 21.7205s
+Thu 22 Jan 2026 02:38:50 INFO  [Epoch 42] Eval Time: 10.3612s
+Thu 22 Jan 2026 02:38:50 INFO  [Epoch 42] Val Results: OrderedDict([('ndcg@5', 0.05246417969465256), ('ndcg@10', 0.06327629089355469), ('recall@5', 0.07467692345380783), ('recall@10', 0.10812503099441528), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:38:50 INFO  [Epoch 42] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:39:17 INFO  [Epoch 43] Train Loss: 4.588521159521424
+Thu 22 Jan 2026 02:39:17 INFO  [Epoch 43] Training Time: 26.8776s
+Thu 22 Jan 2026 02:39:25 INFO  [Epoch 43] Eval Time: 7.7749s
+Thu 22 Jan 2026 02:39:25 INFO  [Epoch 43] Val Results: OrderedDict([('ndcg@5', 0.053751565515995026), ('ndcg@10', 0.06434477865695953), ('recall@5', 0.07646559178829193), ('recall@10', 0.10946653038263321), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:39:25 INFO  [Epoch 43] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:39:50 INFO  [Epoch 44] Train Loss: 4.577166052147893
+Thu 22 Jan 2026 02:39:50 INFO  [Epoch 44] Training Time: 25.2829s
+Thu 22 Jan 2026 02:40:03 INFO  [Epoch 44] Eval Time: 13.2122s
+Thu 22 Jan 2026 02:40:03 INFO  [Epoch 44] Val Results: OrderedDict([('ndcg@5', 0.0542481392621994), ('ndcg@10', 0.06501758843660355), ('recall@5', 0.07686804234981537), ('recall@10', 0.11027143150568008), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:40:03 INFO  [Epoch 44] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:40:23 INFO  [Epoch 45] Train Loss: 4.5609298271707965
+Thu 22 Jan 2026 02:40:23 INFO  [Epoch 45] Training Time: 19.1925s
+Thu 22 Jan 2026 02:40:36 INFO  [Epoch 45] Eval Time: 13.3686s
+Thu 22 Jan 2026 02:40:36 INFO  [Epoch 45] Val Results: OrderedDict([('ndcg@5', 0.05278060957789421), ('ndcg@10', 0.0634414330124855), ('recall@5', 0.075124092400074), ('recall@10', 0.10830389708280563), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:41:01 INFO  [Epoch 46] Train Loss: 4.545597874292053
+Thu 22 Jan 2026 02:41:01 INFO  [Epoch 46] Training Time: 24.5701s
+Thu 22 Jan 2026 02:41:10 INFO  [Epoch 46] Eval Time: 9.7821s
+Thu 22 Jan 2026 02:41:10 INFO  [Epoch 46] Val Results: OrderedDict([('ndcg@5', 0.05385050177574158), ('ndcg@10', 0.0644514262676239), ('recall@5', 0.0760631412267685), ('recall@10', 0.10892993211746216), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:41:35 INFO  [Epoch 47] Train Loss: 4.5334383284691535
+Thu 22 Jan 2026 02:41:35 INFO  [Epoch 47] Training Time: 24.4066s
+Thu 22 Jan 2026 02:41:47 INFO  [Epoch 47] Eval Time: 11.9798s
+Thu 22 Jan 2026 02:41:47 INFO  [Epoch 47] Val Results: OrderedDict([('ndcg@5', 0.0542684830725193), ('ndcg@10', 0.06474380195140839), ('recall@5', 0.0772704929113388), ('recall@10', 0.10964539647102356), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:42:08 INFO  [Epoch 48] Train Loss: 4.519304794840293
+Thu 22 Jan 2026 02:42:08 INFO  [Epoch 48] Training Time: 21.1266s
+Thu 22 Jan 2026 02:42:19 INFO  [Epoch 48] Eval Time: 10.8742s
+Thu 22 Jan 2026 02:42:19 INFO  [Epoch 48] Val Results: OrderedDict([('ndcg@5', 0.055305302143096924), ('ndcg@10', 0.06503486633300781), ('recall@5', 0.07892501354217529), ('recall@10', 0.10910879820585251), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:42:19 INFO  [Epoch 48] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:42:45 INFO  [Epoch 49] Train Loss: 4.5031530550210785
+Thu 22 Jan 2026 02:42:45 INFO  [Epoch 49] Training Time: 26.7604s
+Thu 22 Jan 2026 02:42:53 INFO  [Epoch 49] Eval Time: 7.4140s
+Thu 22 Jan 2026 02:42:53 INFO  [Epoch 49] Val Results: OrderedDict([('ndcg@5', 0.05552777275443077), ('ndcg@10', 0.066011942923069), ('recall@5', 0.07914859056472778), ('recall@10', 0.11174707859754562), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:42:53 INFO  [Epoch 49] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:43:19 INFO  [Epoch 50] Train Loss: 4.487584576748385
+Thu 22 Jan 2026 02:43:19 INFO  [Epoch 50] Training Time: 25.8003s
+Thu 22 Jan 2026 02:43:31 INFO  [Epoch 50] Eval Time: 12.4000s
+Thu 22 Jan 2026 02:43:31 INFO  [Epoch 50] Val Results: OrderedDict([('ndcg@5', 0.05479118973016739), ('ndcg@10', 0.0650704950094223), ('recall@5', 0.0776282250881195), ('recall@10', 0.10951124876737595), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:43:50 INFO  [Epoch 51] Train Loss: 4.471390134037131
+Thu 22 Jan 2026 02:43:50 INFO  [Epoch 51] Training Time: 19.0535s
+Thu 22 Jan 2026 02:44:03 INFO  [Epoch 51] Eval Time: 13.2791s
+Thu 22 Jan 2026 02:44:03 INFO  [Epoch 51] Val Results: OrderedDict([('ndcg@5', 0.05435503274202347), ('ndcg@10', 0.06458838284015656), ('recall@5', 0.07731521129608154), ('recall@10', 0.10910879820585251), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:44:28 INFO  [Epoch 52] Train Loss: 4.458253888800593
+Thu 22 Jan 2026 02:44:28 INFO  [Epoch 52] Training Time: 24.6109s
+Thu 22 Jan 2026 02:44:38 INFO  [Epoch 52] Eval Time: 10.1479s
+Thu 22 Jan 2026 02:44:38 INFO  [Epoch 52] Val Results: OrderedDict([('ndcg@5', 0.055407002568244934), ('ndcg@10', 0.06570779532194138), ('recall@5', 0.07812011241912842), ('recall@10', 0.10995841026306152), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:45:02 INFO  [Epoch 53] Train Loss: 4.443902360330714
+Thu 22 Jan 2026 02:45:02 INFO  [Epoch 53] Training Time: 24.1524s
+Thu 22 Jan 2026 02:45:15 INFO  [Epoch 53] Eval Time: 12.2939s
+Thu 22 Jan 2026 02:45:15 INFO  [Epoch 53] Val Results: OrderedDict([('ndcg@5', 0.05541422218084335), ('ndcg@10', 0.06592540442943573), ('recall@5', 0.07865671068429947), ('recall@10', 0.11129991710186005), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:45:35 INFO  [Epoch 54] Train Loss: 4.430498269524905
+Thu 22 Jan 2026 02:45:35 INFO  [Epoch 54] Training Time: 20.6077s
+Thu 22 Jan 2026 02:45:47 INFO  [Epoch 54] Eval Time: 11.2139s
+Thu 22 Jan 2026 02:45:47 INFO  [Epoch 54] Val Results: OrderedDict([('ndcg@5', 0.05658355727791786), ('ndcg@10', 0.06651242077350616), ('recall@5', 0.08053480833768845), ('recall@10', 0.11134462803602219), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:45:47 INFO  [Epoch 54] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:46:13 INFO  [Epoch 55] Train Loss: 4.416567075370562
+Thu 22 Jan 2026 02:46:13 INFO  [Epoch 55] Training Time: 26.9430s
+Thu 22 Jan 2026 02:46:20 INFO  [Epoch 55] Eval Time: 6.8525s
+Thu 22 Jan 2026 02:46:20 INFO  [Epoch 55] Val Results: OrderedDict([('ndcg@5', 0.05582217499613762), ('ndcg@10', 0.0655076652765274), ('recall@5', 0.07919330894947052), ('recall@10', 0.10924294590950012), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:46:46 INFO  [Epoch 56] Train Loss: 4.401617120988298
+Thu 22 Jan 2026 02:46:46 INFO  [Epoch 56] Training Time: 26.1084s
+Thu 22 Jan 2026 02:46:58 INFO  [Epoch 56] Eval Time: 11.8806s
+Thu 22 Jan 2026 02:46:58 INFO  [Epoch 56] Val Results: OrderedDict([('ndcg@5', 0.055901892483234406), ('ndcg@10', 0.06614243984222412), ('recall@5', 0.07955104112625122), ('recall@10', 0.11125519871711731), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:47:18 INFO  [Epoch 57] Train Loss: 4.389294392991774
+Thu 22 Jan 2026 02:47:18 INFO  [Epoch 57] Training Time: 19.9353s
+Thu 22 Jan 2026 02:47:31 INFO  [Epoch 57] Eval Time: 12.8058s
+Thu 22 Jan 2026 02:47:31 INFO  [Epoch 57] Val Results: OrderedDict([('ndcg@5', 0.055935077369213104), ('ndcg@10', 0.06627462804317474), ('recall@5', 0.07946161180734634), ('recall@10', 0.11152350157499313), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:47:56 INFO  [Epoch 58] Train Loss: 4.3746993848592926
+Thu 22 Jan 2026 02:47:56 INFO  [Epoch 58] Training Time: 24.6514s
+Thu 22 Jan 2026 02:48:06 INFO  [Epoch 58] Eval Time: 10.1640s
+Thu 22 Jan 2026 02:48:06 INFO  [Epoch 58] Val Results: OrderedDict([('ndcg@5', 0.05564833804965019), ('ndcg@10', 0.06518810242414474), ('recall@5', 0.07919330894947052), ('recall@10', 0.10879577696323395), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:48:30 INFO  [Epoch 59] Train Loss: 4.360919192285821
+Thu 22 Jan 2026 02:48:30 INFO  [Epoch 59] Training Time: 24.1733s
+Thu 22 Jan 2026 02:48:43 INFO  [Epoch 59] Eval Time: 12.9151s
+Thu 22 Jan 2026 02:48:43 INFO  [Epoch 59] Val Results: OrderedDict([('ndcg@5', 0.056467313319444656), ('ndcg@10', 0.06637256592512131), ('recall@5', 0.07879085838794708), ('recall@10', 0.10964539647102356), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:49:03 INFO  [Epoch 60] Train Loss: 4.347877341921967
+Thu 22 Jan 2026 02:49:03 INFO  [Epoch 60] Training Time: 20.0258s
+Thu 22 Jan 2026 02:49:15 INFO  [Epoch 60] Eval Time: 11.7923s
+Thu 22 Jan 2026 02:49:15 INFO  [Epoch 60] Val Results: OrderedDict([('ndcg@5', 0.0564623586833477), ('ndcg@10', 0.06690483540296555), ('recall@5', 0.07968519628047943), ('recall@10', 0.11214952915906906), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:49:15 INFO  [Epoch 60] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:49:41 INFO  [Epoch 61] Train Loss: 4.3354734194160685
+Thu 22 Jan 2026 02:49:41 INFO  [Epoch 61] Training Time: 26.4000s
+Thu 22 Jan 2026 02:49:48 INFO  [Epoch 61] Eval Time: 6.9430s
+Thu 22 Jan 2026 02:49:48 INFO  [Epoch 61] Val Results: OrderedDict([('ndcg@5', 0.05614001303911209), ('ndcg@10', 0.06627842038869858), ('recall@5', 0.07847784459590912), ('recall@10', 0.10991369932889938), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:50:15 INFO  [Epoch 62] Train Loss: 4.3238122770101715
+Thu 22 Jan 2026 02:50:15 INFO  [Epoch 62] Training Time: 26.6651s
+Thu 22 Jan 2026 02:50:26 INFO  [Epoch 62] Eval Time: 11.2321s
+Thu 22 Jan 2026 02:50:26 INFO  [Epoch 62] Val Results: OrderedDict([('ndcg@5', 0.05612161010503769), ('ndcg@10', 0.0658465027809143), ('recall@5', 0.0796404778957367), ('recall@10', 0.11000312864780426), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:50:47 INFO  [Epoch 63] Train Loss: 4.31021238081526
+Thu 22 Jan 2026 02:50:47 INFO  [Epoch 63] Training Time: 20.6247s
+Thu 22 Jan 2026 02:50:59 INFO  [Epoch 63] Eval Time: 12.1969s
+Thu 22 Jan 2026 02:50:59 INFO  [Epoch 63] Val Results: OrderedDict([('ndcg@5', 0.05618517845869064), ('ndcg@10', 0.0657425969839096), ('recall@5', 0.07972991466522217), ('recall@10', 0.10951124876737595), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:51:23 INFO  [Epoch 64] Train Loss: 4.297057510602592
+Thu 22 Jan 2026 02:51:23 INFO  [Epoch 64] Training Time: 24.3590s
+Thu 22 Jan 2026 02:51:33 INFO  [Epoch 64] Eval Time: 10.1092s
+Thu 22 Jan 2026 02:51:33 INFO  [Epoch 64] Val Results: OrderedDict([('ndcg@5', 0.05557696893811226), ('ndcg@10', 0.06541135162115097), ('recall@5', 0.07892501354217529), ('recall@10', 0.10955595970153809), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:51:58 INFO  [Epoch 65] Train Loss: 4.285292042363988
+Thu 22 Jan 2026 02:51:58 INFO  [Epoch 65] Training Time: 24.3209s
+Thu 22 Jan 2026 02:52:11 INFO  [Epoch 65] Eval Time: 13.0393s
+Thu 22 Jan 2026 02:52:11 INFO  [Epoch 65] Val Results: OrderedDict([('ndcg@5', 0.05658663436770439), ('ndcg@10', 0.06622626632452011), ('recall@5', 0.07986406236886978), ('recall@10', 0.10964539647102356), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:52:30 INFO  [Epoch 66] Train Loss: 4.274941354694933
+Thu 22 Jan 2026 02:52:30 INFO  [Epoch 66] Training Time: 19.4718s
+Thu 22 Jan 2026 02:52:42 INFO  [Epoch 66] Eval Time: 12.0672s
+Thu 22 Jan 2026 02:52:42 INFO  [Epoch 66] Val Results: OrderedDict([('ndcg@5', 0.056716930121183395), ('ndcg@10', 0.06649939715862274), ('recall@5', 0.08066896349191666), ('recall@10', 0.11107633262872696), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:53:08 INFO  [Epoch 67] Train Loss: 4.262461506494201
+Thu 22 Jan 2026 02:53:08 INFO  [Epoch 67] Training Time: 25.9303s
+Thu 22 Jan 2026 02:53:16 INFO  [Epoch 67] Eval Time: 7.7660s
+Thu 22 Jan 2026 02:53:16 INFO  [Epoch 67] Val Results: OrderedDict([('ndcg@5', 0.05737197771668434), ('ndcg@10', 0.06650568544864655), ('recall@5', 0.08169744908809662), ('recall@10', 0.10995841026306152), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:53:42 INFO  [Epoch 68] Train Loss: 4.249727463958287
+Thu 22 Jan 2026 02:53:42 INFO  [Epoch 68] Training Time: 26.1633s
+Thu 22 Jan 2026 02:53:53 INFO  [Epoch 68] Eval Time: 10.5453s
+Thu 22 Jan 2026 02:53:53 INFO  [Epoch 68] Val Results: OrderedDict([('ndcg@5', 0.05700471252202988), ('ndcg@10', 0.06661608070135117), ('recall@5', 0.080847829580307), ('recall@10', 0.11067388206720352), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:54:15 INFO  [Epoch 69] Train Loss: 4.237300119777717
+Thu 22 Jan 2026 02:54:15 INFO  [Epoch 69] Training Time: 21.8236s
+Thu 22 Jan 2026 02:54:26 INFO  [Epoch 69] Eval Time: 11.3644s
+Thu 22 Jan 2026 02:54:26 INFO  [Epoch 69] Val Results: OrderedDict([('ndcg@5', 0.05741133168339729), ('ndcg@10', 0.06734151393175125), ('recall@5', 0.08093725889921188), ('recall@10', 0.11179179698228836), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:54:26 INFO  [Epoch 69] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:54:51 INFO  [Epoch 70] Train Loss: 4.229301327525979
+Thu 22 Jan 2026 02:54:51 INFO  [Epoch 70] Training Time: 25.3282s
+Thu 22 Jan 2026 02:55:01 INFO  [Epoch 70] Eval Time: 9.4680s
+Thu 22 Jan 2026 02:55:01 INFO  [Epoch 70] Val Results: OrderedDict([('ndcg@5', 0.05656960979104042), ('ndcg@10', 0.06658415496349335), ('recall@5', 0.08080311119556427), ('recall@10', 0.11170236766338348), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:55:25 INFO  [Epoch 71] Train Loss: 4.214383713089593
+Thu 22 Jan 2026 02:55:25 INFO  [Epoch 71] Training Time: 24.3042s
+Thu 22 Jan 2026 02:55:38 INFO  [Epoch 71] Eval Time: 13.1031s
+Thu 22 Jan 2026 02:55:38 INFO  [Epoch 71] Val Results: OrderedDict([('ndcg@5', 0.05778856575489044), ('ndcg@10', 0.06743466109037399), ('recall@5', 0.08236819505691528), ('recall@10', 0.11232840269804001), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:55:38 INFO  [Epoch 71] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:55:58 INFO  [Epoch 72] Train Loss: 4.203705062960634
+Thu 22 Jan 2026 02:55:58 INFO  [Epoch 72] Training Time: 19.6598s
+Thu 22 Jan 2026 02:56:11 INFO  [Epoch 72] Eval Time: 12.7116s
+Thu 22 Jan 2026 02:56:11 INFO  [Epoch 72] Val Results: OrderedDict([('ndcg@5', 0.05719415843486786), ('ndcg@10', 0.06674614548683167), ('recall@5', 0.08174216002225876), ('recall@10', 0.1114787831902504), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:56:36 INFO  [Epoch 73] Train Loss: 4.195651885306481
+Thu 22 Jan 2026 02:56:36 INFO  [Epoch 73] Training Time: 25.2719s
+Thu 22 Jan 2026 02:56:44 INFO  [Epoch 73] Eval Time: 8.3308s
+Thu 22 Jan 2026 02:56:44 INFO  [Epoch 73] Val Results: OrderedDict([('ndcg@5', 0.057153891772031784), ('ndcg@10', 0.06669838726520538), ('recall@5', 0.08102669566869736), ('recall@10', 0.11071860045194626), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:57:10 INFO  [Epoch 74] Train Loss: 4.184866338673205
+Thu 22 Jan 2026 02:57:10 INFO  [Epoch 74] Training Time: 25.5462s
+Thu 22 Jan 2026 02:57:20 INFO  [Epoch 74] Eval Time: 10.7230s
+Thu 22 Jan 2026 02:57:20 INFO  [Epoch 74] Val Results: OrderedDict([('ndcg@5', 0.05806471407413483), ('ndcg@10', 0.06801870465278625), ('recall@5', 0.08209989964962006), ('recall@10', 0.11308858543634415), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:57:20 INFO  [Epoch 74] Saved model checkpoint to ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 02:57:43 INFO  [Epoch 75] Train Loss: 4.1750443501047565
+Thu 22 Jan 2026 02:57:43 INFO  [Epoch 75] Training Time: 22.3133s
+Thu 22 Jan 2026 02:57:54 INFO  [Epoch 75] Eval Time: 11.0063s
+Thu 22 Jan 2026 02:57:54 INFO  [Epoch 75] Val Results: OrderedDict([('ndcg@5', 0.056967709213495255), ('ndcg@10', 0.06709922105073929), ('recall@5', 0.0807136818766594), ('recall@10', 0.11210481822490692), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:58:19 INFO  [Epoch 76] Train Loss: 4.166733267283676
+Thu 22 Jan 2026 02:58:19 INFO  [Epoch 76] Training Time: 25.7021s
+Thu 22 Jan 2026 02:58:28 INFO  [Epoch 76] Eval Time: 8.9176s
+Thu 22 Jan 2026 02:58:28 INFO  [Epoch 76] Val Results: OrderedDict([('ndcg@5', 0.05711181089282036), ('ndcg@10', 0.06685254722833633), ('recall@5', 0.08057952672243118), ('recall@10', 0.11085274815559387), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:58:53 INFO  [Epoch 77] Train Loss: 4.152508391012059
+Thu 22 Jan 2026 02:58:53 INFO  [Epoch 77] Training Time: 24.4113s
+Thu 22 Jan 2026 02:59:06 INFO  [Epoch 77] Eval Time: 13.3597s
+Thu 22 Jan 2026 02:59:06 INFO  [Epoch 77] Val Results: OrderedDict([('ndcg@5', 0.057556841522455215), ('ndcg@10', 0.06709431856870651), ('recall@5', 0.08125028014183044), ('recall@10', 0.11080802977085114), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 02:59:26 INFO  [Epoch 78] Train Loss: 4.143938817600213
+Thu 22 Jan 2026 02:59:26 INFO  [Epoch 78] Training Time: 19.3631s
+Thu 22 Jan 2026 02:59:39 INFO  [Epoch 78] Eval Time: 13.3226s
+Thu 22 Jan 2026 02:59:39 INFO  [Epoch 78] Val Results: OrderedDict([('ndcg@5', 0.057326339185237885), ('ndcg@10', 0.06708405166864395), ('recall@5', 0.08089254796504974), ('recall@10', 0.11125519871711731), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:00:04 INFO  [Epoch 79] Train Loss: 4.132669975261877
+Thu 22 Jan 2026 03:00:04 INFO  [Epoch 79] Training Time: 24.8656s
+Thu 22 Jan 2026 03:00:12 INFO  [Epoch 79] Eval Time: 8.6746s
+Thu 22 Jan 2026 03:00:12 INFO  [Epoch 79] Val Results: OrderedDict([('ndcg@5', 0.05732560157775879), ('ndcg@10', 0.06725612282752991), ('recall@5', 0.0804900974035263), ('recall@10', 0.11116576194763184), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:00:38 INFO  [Epoch 80] Train Loss: 4.130475207130508
+Thu 22 Jan 2026 03:00:38 INFO  [Epoch 80] Training Time: 25.2893s
+Thu 22 Jan 2026 03:00:49 INFO  [Epoch 80] Eval Time: 11.0854s
+Thu 22 Jan 2026 03:00:49 INFO  [Epoch 80] Val Results: OrderedDict([('ndcg@5', 0.05735829845070839), ('ndcg@10', 0.06711837649345398), ('recall@5', 0.08133970946073532), ('recall@10', 0.11161293089389801), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:01:11 INFO  [Epoch 81] Train Loss: 4.114265342750172
+Thu 22 Jan 2026 03:01:11 INFO  [Epoch 81] Training Time: 22.2449s
+Thu 22 Jan 2026 03:01:22 INFO  [Epoch 81] Eval Time: 10.8511s
+Thu 22 Jan 2026 03:01:22 INFO  [Epoch 81] Val Results: OrderedDict([('ndcg@5', 0.05704112723469734), ('ndcg@10', 0.06716922670602798), ('recall@5', 0.08031123131513596), ('recall@10', 0.11170236766338348), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:01:48 INFO  [Epoch 82] Train Loss: 4.107632840033805
+Thu 22 Jan 2026 03:01:48 INFO  [Epoch 82] Training Time: 25.8916s
+Thu 22 Jan 2026 03:01:56 INFO  [Epoch 82] Eval Time: 8.5577s
+Thu 22 Jan 2026 03:01:56 INFO  [Epoch 82] Val Results: OrderedDict([('ndcg@5', 0.05709754303097725), ('ndcg@10', 0.06719877570867538), ('recall@5', 0.08116084337234497), ('recall@10', 0.11259669810533524), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:02:21 INFO  [Epoch 83] Train Loss: 4.0973653604488565
+Thu 22 Jan 2026 03:02:21 INFO  [Epoch 83] Training Time: 24.5039s
+Thu 22 Jan 2026 03:02:34 INFO  [Epoch 83] Eval Time: 13.3534s
+Thu 22 Jan 2026 03:02:34 INFO  [Epoch 83] Val Results: OrderedDict([('ndcg@5', 0.05735090747475624), ('ndcg@10', 0.06685195118188858), ('recall@5', 0.08165273070335388), ('recall@10', 0.1111210510134697), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:02:53 INFO  [Epoch 84] Train Loss: 4.0875125474268845
+Thu 22 Jan 2026 03:02:53 INFO  [Epoch 84] Training Time: 19.2538s
+Thu 22 Jan 2026 03:03:07 INFO  [Epoch 84] Eval Time: 13.0993s
+Thu 22 Jan 2026 03:03:07 INFO  [Epoch 84] Val Results: OrderedDict([('ndcg@5', 0.05809102952480316), ('ndcg@10', 0.06798406690359116), ('recall@5', 0.08205518126487732), ('recall@10', 0.11268613487482071), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:03:31 INFO  [Epoch 85] Train Loss: 4.080595323354891
+Thu 22 Jan 2026 03:03:31 INFO  [Epoch 85] Training Time: 24.6956s
+Thu 22 Jan 2026 03:03:40 INFO  [Epoch 85] Eval Time: 9.2101s
+Thu 22 Jan 2026 03:03:40 INFO  [Epoch 85] Val Results: OrderedDict([('ndcg@5', 0.05780917778611183), ('ndcg@10', 0.0674605518579483), ('recall@5', 0.08138442784547806), ('recall@10', 0.11121048033237457), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:04:05 INFO  [Epoch 86] Train Loss: 4.076893077038302
+Thu 22 Jan 2026 03:04:05 INFO  [Epoch 86] Training Time: 24.6807s
+Thu 22 Jan 2026 03:04:17 INFO  [Epoch 86] Eval Time: 11.6251s
+Thu 22 Jan 2026 03:04:17 INFO  [Epoch 86] Val Results: OrderedDict([('ndcg@5', 0.05755981057882309), ('ndcg@10', 0.06712367385625839), ('recall@5', 0.08133970946073532), ('recall@10', 0.11116576194763184), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:04:39 INFO  [Epoch 87] Train Loss: 4.0656590910241155
+Thu 22 Jan 2026 03:04:39 INFO  [Epoch 87] Training Time: 21.9224s
+Thu 22 Jan 2026 03:04:49 INFO  [Epoch 87] Eval Time: 10.6017s
+Thu 22 Jan 2026 03:04:49 INFO  [Epoch 87] Val Results: OrderedDict([('ndcg@5', 0.057430241256952286), ('ndcg@10', 0.06708059459924698), ('recall@5', 0.08093725889921188), ('recall@10', 0.11085274815559387), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:05:16 INFO  [Epoch 88] Train Loss: 4.0600682178346235
+Thu 22 Jan 2026 03:05:16 INFO  [Epoch 88] Training Time: 26.4766s
+Thu 22 Jan 2026 03:05:24 INFO  [Epoch 88] Eval Time: 7.8964s
+Thu 22 Jan 2026 03:05:24 INFO  [Epoch 88] Val Results: OrderedDict([('ndcg@5', 0.056610580533742905), ('ndcg@10', 0.06668384373188019), ('recall@5', 0.08008764684200287), ('recall@10', 0.11138934642076492), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:05:49 INFO  [Epoch 89] Train Loss: 4.0485214124811755
+Thu 22 Jan 2026 03:05:49 INFO  [Epoch 89] Training Time: 25.2967s
+Thu 22 Jan 2026 03:06:01 INFO  [Epoch 89] Eval Time: 12.5409s
+Thu 22 Jan 2026 03:06:01 INFO  [Epoch 89] Val Results: OrderedDict([('ndcg@5', 0.05708589404821396), ('ndcg@10', 0.06669314205646515), ('recall@5', 0.08066896349191666), ('recall@10', 0.11045029759407043), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:06:21 INFO  [Epoch 90] Train Loss: 4.042600938589266
+Thu 22 Jan 2026 03:06:21 INFO  [Epoch 90] Training Time: 19.2060s
+Thu 22 Jan 2026 03:06:34 INFO  [Epoch 90] Eval Time: 12.8881s
+Thu 22 Jan 2026 03:06:34 INFO  [Epoch 90] Val Results: OrderedDict([('ndcg@5', 0.056919630616903305), ('ndcg@10', 0.06632695347070694), ('recall@5', 0.08013235777616501), ('recall@10', 0.10924294590950012), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:06:58 INFO  [Epoch 91] Train Loss: 4.03634530482906
+Thu 22 Jan 2026 03:06:58 INFO  [Epoch 91] Training Time: 24.8597s
+Thu 22 Jan 2026 03:07:08 INFO  [Epoch 91] Eval Time: 9.9766s
+Thu 22 Jan 2026 03:07:08 INFO  [Epoch 91] Val Results: OrderedDict([('ndcg@5', 0.056887853890657425), ('ndcg@10', 0.06665235757827759), ('recall@5', 0.08062424510717392), ('recall@10', 0.11085274815559387), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:07:32 INFO  [Epoch 92] Train Loss: 4.029445825236858
+Thu 22 Jan 2026 03:07:32 INFO  [Epoch 92] Training Time: 24.0111s
+Thu 22 Jan 2026 03:07:45 INFO  [Epoch 92] Eval Time: 12.1299s
+Thu 22 Jan 2026 03:07:45 INFO  [Epoch 92] Val Results: OrderedDict([('ndcg@5', 0.05730164796113968), ('ndcg@10', 0.06715336441993713), ('recall@5', 0.08080311119556427), ('recall@10', 0.11129991710186005), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:08:06 INFO  [Epoch 93] Train Loss: 4.019247706573789
+Thu 22 Jan 2026 03:08:06 INFO  [Epoch 93] Training Time: 21.2923s
+Thu 22 Jan 2026 03:08:17 INFO  [Epoch 93] Eval Time: 10.7835s
+Thu 22 Jan 2026 03:08:17 INFO  [Epoch 93] Val Results: OrderedDict([('ndcg@5', 0.056744534522295), ('ndcg@10', 0.06604274362325668), ('recall@5', 0.08120556175708771), ('recall@10', 0.110047847032547), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:08:44 INFO  [Epoch 94] Train Loss: 4.013685752849768
+Thu 22 Jan 2026 03:08:44 INFO  [Epoch 94] Training Time: 26.9805s
+Thu 22 Jan 2026 03:08:51 INFO  [Epoch 94] Eval Time: 7.3118s
+Thu 22 Jan 2026 03:08:51 INFO  [Epoch 94] Val Results: OrderedDict([('ndcg@5', 0.0578763447701931), ('ndcg@10', 0.06733018904924393), ('recall@5', 0.08169744908809662), ('recall@10', 0.11098689585924149), ('n_visited_items', 12101.0009765625)])
+Thu 22 Jan 2026 03:08:51 INFO  Early stopping at epoch 94
+Thu 22 Jan 2026 03:08:51 INFO  Best epoch: 74, Best val score: 0.06801870465278625
+Thu 22 Jan 2026 03:08:51 INFO  GPU Memory Allocated (Max): 4.1282 GB
+Thu 22 Jan 2026 03:08:51 INFO  GPU Memory Reserved (Max): 4.6738 GB
+Thu 22 Jan 2026 03:08:51 INFO  Loaded best model checkpoint from ckpt/genrec_default-main.py_--category=Beauty_--model=GRQ_--context_fusion_weight=4.0-Jan-22-2026_02-12-118678.pth
+Thu 22 Jan 2026 03:09:03 INFO  Test Results: OrderedDict([('ndcg@5', 0.04412268474698067), ('ndcg@10', 0.052585624158382416), ('recall@5', 0.06220095604658127), ('recall@10', 0.08849439024925232), ('n_visited_items', 12101.0009765625)])
