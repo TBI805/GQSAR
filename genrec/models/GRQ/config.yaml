@@ -80,5 +80,5 @@ num_workers: 64
 #   - size=16: 1 group (Fully Parallel)
 
 prediction_group_size: 8
-context_fusion_weight: 1.0
+context_fusion_weight: 6.0
 
