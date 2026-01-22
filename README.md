@@ -6,7 +6,7 @@ This repository provides the code for _"GQSAR: Grouped Residual Quantization for
 <img src="img/framework.png"/>
 </div>
 
-## Quick Start
+## 1. Quick Start
 
 Run the following command to start training the model with a specified category:
 
@@ -20,13 +20,13 @@ Available categories:
 * `Toys_and_Games`
 
 Note that:
-1. The datasets will be automatically downloaded once the `category` argument is specified.
-2. All hyperparameters can be specified via command line arguments. Please refer to:
+(1). The datasets will be automatically downloaded once the `category` argument is specified.
+(2). All hyperparameters can be specified via command line arguments. Please refer to:
     * `genrec/default.yaml`
     * `genrec/datasets/AmazonReviews2014/config.yaml`
     * `genrec/models/GRQ/config.yaml`
 
-## Reproduction
+## 2. Reproduction
 
 ### Sports and Outdoors
 
@@ -45,7 +45,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py --category=Beauty --model=GRQ --context_fu
 ```
 CUDA_VISIBLE_DEVICES=0 python main.py --category=Toys_and_Games --model=GRQ --context_fusion_weight=2.0
 ```
-### Results of Overall Performance
+## 3. Results of Overall Performance
 You can also check the training logs in[`📁 logs`](logs/).
 
 ## Acknowledgment
