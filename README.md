@@ -20,8 +20,8 @@ Available categories:
 * `Toys_and_Games`
 
 Note that:
-(1). The datasets will be automatically downloaded once the `category` argument is specified.
-(2). All hyperparameters can be specified via command line arguments. Please refer to:
+(1) The datasets will be automatically downloaded once the `category` argument is specified.
+(2) All hyperparameters can be specified via command line arguments. Please refer to:
     * `genrec/default.yaml`
     * `genrec/datasets/AmazonReviews2014/config.yaml`
     * `genrec/models/GRQ/config.yaml`
