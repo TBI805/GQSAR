@@ -1,6 +1,6 @@
 # GQSAR
 
-This repository provides the code for _"GQSAR: Grouped Residual Quantization for Semi-Autoregressive Generative Recommendation"_.
+This repository provides the code for _"GQSAR: Grouped Residual Quantization for Latent Semi-Autoregressive Generative Recommendation"_.
 
 <div align="center">
 <img src="img/framework.png"/>
